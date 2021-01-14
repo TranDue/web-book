@@ -1,0 +1,138 @@
+<body id="page-top">
+  <div id="wrapper">
+
+  <!-- Sidebar -->
+  <ul class="sidebar navbar-nav">
+  </ul>
+
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <!-- DataTables Example -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class=""></i>
+          Quản lý sản phẩm</div>
+        <div class="card-body">
+
+          <!-- open modal -->
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+            Thêm Mới Sản Phẩm</button>
+            <div class="modal fade" id="myModal" role="dialog" data-backdrop="false">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Điền thông sản phẩm</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form #form="ngForm" autocomplete="off">
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Tên sách</label>
+                        <input type="text" class="form-control" id="name" placeholder="Tên sách ...">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Nội dung</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nội dung ...">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Thể loại sách</label>
+                        <select class="form-control" id="gender">
+                          <option>Sách Tiếng Anh</option>
+                          <option>SÁch Tiếng Việt</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Năm xuất bản</label>
+                        <input type="date" class="form-control" id="birthday" placeholder="1999">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Nhà cung cấp</label>
+                        <input type="text" class="form-control" id="address" placeholder="Nhà Cung cấp">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Tác giả</label>
+                        <input type="text" class="form-control" id="role" placeholder="Admin..">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Số Trang</label>
+                        <input type="number" class="form-control" id="phone" placeholder="+84xxxxxxx">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Giá</label>
+                        <input type="number" class="form-control" id="phone" placeholder="....... Đồng">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Ảnh</label>
+                        <input type="text" class="form-control" id="phone" placeholder="....... Đồng">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="addEmployee()">Thêm</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+                  <!-- List OUTPUT -->
+          <table class="table table-bordered" id="listEmployee" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Tên sách</th>
+                <th>Nội dung tiêu đề</th>
+                <th>Năm xuất bản</th>
+                <th>Nhà cung cấp</th>
+                <th>Tác giả</th>
+                <th>Số trang</th>
+                <th>Giá tiền</th>
+                <th>Ảnh</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let book of books">
+              <tr>
+                <th>{{book.maSach}}</th>
+                <th>{{book.tenSach}}</th>
+                <th>{{book.noidung}}</th>
+                <th>{{book.ngayxuatban}}</th>
+                <th>{{book.manhasanxuat}}</th>
+                <th>{{book.matacgia}}</th>
+                <th>{{book.sotrang}}</th>
+                <th>{{book.gia}}</th>
+                <th><img class="images" [src]="book.anhSach" alt="{{book.tenSach}}" width="200" height="100"></th>
+                <button class="btn btn-danger">Xóa</button>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- <div class="card-footer small text-muted"></div> -->
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+    <!-- Sticky Footer -->
+    <footer class="sticky-footer">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright © 2019</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Bootstrap core JavaScript-->
+</body>

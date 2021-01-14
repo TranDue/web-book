@@ -1,0 +1,40 @@
+<mat-toolbar>
+  <section>
+        <button mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
+          <mat-icon>menu</mat-icon>
+          </button>
+  </section>
+  <h1>Trang Quản lý Admin - Quản trị hệ thống</h1>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+
+</mat-toolbar>
+<mat-tab-group>
+  <mat-tab label="Trang chủ" class="title" class="bi bi-backspace-fill">
+    <app-home-config></app-home-config>
+  </mat-tab >
+  <mat-tab label="Sản phẩm" class="title">
+    <app-sanpham-config></app-sanpham-config>
+  </mat-tab>
+  <mat-tab label="Account" class="title">
+    <app-account-config></app-account-config>
+  </mat-tab>
+  <mat-tab label="Phản Hồi" class="title">
+    <app-phanhoi-config></app-phanhoi-config>
+  </mat-tab>
+  <mat-tab label="Thống Kê" class="title">
+    <app-thongke-config></app-thongke-config>
+  </mat-tab>
+  <mat-tab label="Liên hệ" class="title">
+    <app-lienhe-config></app-lienhe-config>
+  </mat-tab>
+</mat-tab-group>
+<mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

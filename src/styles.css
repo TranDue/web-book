@@ -1,0 +1,11 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~ngx-toastr/toastr';
+
+html, body{
+  font-size: 15px;
+}
+
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

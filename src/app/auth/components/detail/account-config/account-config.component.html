@@ -1,0 +1,113 @@
+<body id="page-top">
+  <div id="wrapper">
+
+  <!-- Sidebar -->
+  <ul class="sidebar navbar-nav">
+  </ul>
+
+  <div id="content-wrapper">
+
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <!-- DataTables Example -->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class=""></i>
+          Quản lý Account</div>
+        <div class="card-body">
+          <!-- open modal -->
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Thêm Mới Account</button>
+            <div class="modal fade" id="myModal" role="dialog" data-backdrop="false">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Điền thông Account</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">User Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="User Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Password</label>
+                        <input type="text" class="form-control" id="name" placeholder="Password..">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlInput1">Gmail</label>
+                        <input type="date" class="form-control" id="birthday" placeholder="1999">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal" onclick="addEmployee()">Thêm</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <table [dataSource]="dataSource" mat-table class="table table-bordered mat-elevation-z8" id="listEmployee" width="100%" cellspacing="0" *ngFor="let acc of accs">
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> Stt </th>
+                <td mat-cell *matCellDef="let element"> {{acc.id}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>User Name </th>
+                <td mat-cell *matCellDef="let element"> {{acc.name}} </td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Password </th>
+                <td mat-cell *matCellDef="let element"> {{acc.password}} </td>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let element"> {{acc.gmail}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="symbol1">
+                <th mat-header-cell *matHeaderCellDef> Sdt </th>
+                <td mat-cell *matCellDef="let element"> {{acc.sdt}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="symbol2">
+                <th mat-header-cell *matHeaderCellDef> Address </th>
+                <td mat-cell *matCellDef="let element"> {{acc.addr}} </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <div class="card-footer small text-muted"></div>
+      </div>
+    </div>
+  </div>
+    <!-- Modal content-->
+
+    <!-- Sticky Footer -->
+    <footer class="sticky-footer">
+      <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+          <span>Copyright © 2019</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- /.content-wrapper -->
+
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Bootstrap core JavaScript-->
+</body>
