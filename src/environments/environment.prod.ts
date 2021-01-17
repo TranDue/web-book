@@ -1,11 +1,12 @@
 export const environment = {
   production: true,
-  firebase: {
-    apiKey: '<your-key>',
-    authDomain: '<your-project-authdomain>',
-    databaseURL: '<your-database-URL>',
-    projectId: '<your-project-id>',
-    storageBucket: '<your-storage-bucket>',
-    messagingSenderId: '<your-messaging-sender-id>'
+  firebaseConfig: {
+    apiKey: "AIzaSyDlUMcwFaH8Z3WWwdaMJb6p1U1PLVe-Yt4",
+    authDomain: "web-book-ne.firebaseapp.com",
+    projectId: "web-book-ne",
+    storageBucket: "web-book-ne.appspot.com",
+    messagingSenderId: "475266624098",
+    appId: "1:475266624098:web:45500094147c9a2f28bf3b",
+    measurementId: "G-QDGCSDDTFX"
   }
 };

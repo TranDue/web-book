@@ -48,15 +48,12 @@ import { PaymoneyComponent } from './header/cart/paymoney/paymoney.component';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { ShippingComponent } from './header/cart/shipping/shipping.component';
-import "firebase/analytics";
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from '../environments/environment';
-import "firebase/auth";
-import "firebase/firestore";
-// import { AngularFireModule } from '@angular/fire/firebase.app.module';
+
 registerLocaleData(de);
 
 @NgModule({
@@ -89,9 +86,6 @@ registerLocaleData(de);
     ShippingComponent
   ],
   imports: [
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
     CommonModule,
     BrowserModule,
     HttpClientModule,
@@ -110,6 +104,10 @@ registerLocaleData(de);
     MatRadioModule,
     MatSliderModule,
     NgxPayPalModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     ToastrModule.forRoot({
       progressBar: true
     }),
@@ -121,7 +119,6 @@ registerLocaleData(de);
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
     ]),
-    AngularFireModule.initializeApp(environment.firebase, 'book-project-15a8c')
   ],
 
   providers: [UserService],

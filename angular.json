@@ -30,7 +30,7 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-              ]
+            ]
           },
           "configurations": {
             "production": {
@@ -101,8 +101,7 @@
               "../node_modules/popper.js/dist/umd/popper.min.js",
               "../node_modules/bootstrap/dist/js/bootstrap.min.js",
               "../node_modules/jquery/dist/jquery.min.js"
-    ]
-
+            ]
           }
         },
         "lint": {
@@ -129,6 +128,10 @@
               "devServerTarget": "front-end:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
